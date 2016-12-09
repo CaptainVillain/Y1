@@ -54,25 +54,254 @@ public class SystematicShotPlayer implements BattleshipsPlayer
         nextY = 0;
         sizeX = board.sizeX();
         sizeY = board.sizeY();
-        for(int i = 0; i < fleet.getNumberOfShips(); ++i)
-        {
-            Ship s = fleet.getShip(i);
-            boolean vertical = rnd.nextBoolean();
-            Position pos;
-            if(vertical)
-            {
-                int x = rnd.nextInt(sizeX);
-                int y = rnd.nextInt(sizeY-(s.size()-1));
-                pos = new Position(x, y);
-            }
-            else
-            {
-                int x = rnd.nextInt(sizeX-(s.size()-1));
-                int y = rnd.nextInt(sizeY);
-                pos = new Position(x, y);
-            }
-            board.placeShip(pos, s, vertical);
+        
+        nextX = 0;
+        nextY = 0;
+        sizeX = board.sizeX();
+        sizeY = board.sizeY();
+        int layout = rnd.nextInt(4)+1;
+        boolean vertical = true;
+        Position pos;
+ 
+        //layout 1,
+        if(layout == 1){
+            //ship 1 Size: 2
+             Ship s = fleet.getShip(0);
+             int x = 2;
+             int y = 0;
+             vertical = false;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 2 Size: 3
+             s = fleet.getShip(1);
+             x = 1;
+             y = 6;
+             vertical = true;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 3 Size: 3
+             s = fleet.getShip(2);
+             x = 6;
+             y = 5;
+             vertical = false;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 4 Size: 4
+             s = fleet.getShip(3);
+             x = 7;
+             y = 1;
+             vertical = true;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 5 Size: 5
+             s = fleet.getShip(4);
+             x = 2;
+             y = 7;
+             vertical = false;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
         }
+           
+        //layout 2,
+        if(layout == 2){
+            //ship 1 Size: 2
+             Ship s = fleet.getShip(0);
+             int x = 9;
+             int y = 8;
+             vertical = true;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 2 Size: 3
+             s = fleet.getShip(1);
+             x = 6;
+             y = 1;
+             vertical = false;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 3 Size: 3
+             s = fleet.getShip(2);
+             x = 2;
+             y = 6;
+             vertical = false;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 4 Size: 4
+             s = fleet.getShip(3);
+             x = 6;
+             y = 5;
+             vertical = true;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 5 Size: 5
+             s = fleet.getShip(4);
+             x = 1;
+             y = 4;
+             vertical = true;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+        }
+             
+        //layout 3,
+        if(layout == 3){
+            //ship 1 Size: 2
+             Ship s = fleet.getShip(0);
+             int x = 4;
+             int y = 5;
+             vertical = false;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 2 Size: 3
+             s = fleet.getShip(1);
+             x = 7;
+             y = 0;
+             vertical = false;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 3 Size: 3
+             s = fleet.getShip(2);
+             x = 0;
+             y = 9;
+             vertical = false;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 4 Size: 4
+             s = fleet.getShip(3);
+             x = 8;
+             y = 5;
+             vertical = true;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 5 Size: 5
+             s = fleet.getShip(4);
+             x = 1;
+             y = 1;
+             vertical = true;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+        }
+           
+        //layout 4,
+        if(layout == 4){
+            //ship 1 Size: 2
+             Ship s = fleet.getShip(0);
+             int x = 2;
+             int y = 6;
+             vertical = true;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 2 Size: 3
+             s = fleet.getShip(1);
+             x = 3;
+             y = 6;
+             vertical = false;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 3 Size: 3
+             s = fleet.getShip(2);
+             x = 6;
+             y = 4;
+             vertical = true;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 4 Size: 4
+             s = fleet.getShip(3);
+             x = 5;
+             y = 3;
+             vertical = false;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 5 Size: 5
+             s = fleet.getShip(4);
+             x = 9;
+             y = 0;
+             vertical = true;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+           
+             
+        }
+        //layout 5,
+        if(layout == 5){
+            //ship 1 Size: 2
+             Ship s = fleet.getShip(0);
+             int x = 1;
+             int y = 0;
+             vertical = false;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 2 Size: 3
+             s = fleet.getShip(1);
+             x = 1;
+             y = 9;
+             vertical = false;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 3 Size: 3
+             s = fleet.getShip(2);
+             x = 7;
+             y = 1;
+             vertical = false;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 4 Size: 4
+             s = fleet.getShip(3);
+             x = 2;
+             y = 5;
+             vertical = true;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+             
+            //ship 5 Size: 5
+             s = fleet.getShip(4);
+             x = 8;
+             y = 4;
+             vertical = true;
+             pos = new Position(x, y);
+             board.placeShip(pos, s, vertical);
+           
+             
+        }
+        
+        
+        
+//        for(int i = 0; i < fleet.getNumberOfShips(); ++i)
+//        {
+//            Ship s = fleet.getShip(i);
+//            boolean vertical = rnd.nextBoolean();
+//            Position pos;
+//            if(vertical)
+//            {
+//                int x = rnd.nextInt(sizeX);
+//                int y = rnd.nextInt(sizeY-(s.size()-1));
+//                pos = new Position(x, y);
+//            }
+//            else
+//            {
+//                int x = rnd.nextInt(sizeX-(s.size()-1));
+//                int y = rnd.nextInt(sizeY);
+//                pos = new Position(x, y);
+//            }
+//            board.placeShip(pos, s, vertical);
+//        }
     }
     
     
