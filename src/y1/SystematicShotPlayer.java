@@ -20,6 +20,8 @@ public class SystematicShotPlayer implements BattleshipsPlayer
     private final static Random rnd = new Random();
     private int sizeX;
     private int sizeY;
+    private int lastX;
+    private int lastY;
     
     private int nextX;
     private int nextY;
@@ -102,16 +104,18 @@ public class SystematicShotPlayer implements BattleshipsPlayer
     public Position getFireCoordinates(Fleet enemyShips)
     {
         Position shot = new Position(nextX, nextY);
-        ++nextX;
+        nextX += 4;
         if(nextX >= sizeX)
         {
-            nextX = 0; 
-            ++nextY;
+            nextX = nextX % 10; 
+            nextY++;
             if(nextY >= sizeY)
             {
                 nextY = 0;
             }
         }
+        lastX = nextX;
+        lastY = nextY;
         return shot;
     }
     
